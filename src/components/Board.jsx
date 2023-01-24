@@ -7,18 +7,23 @@ class Board extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            square: Array(9).fill(null),
+            squares: Array(9).fill(null),
         }
     }
 
     handleClick(i) {
-        const squares = this.state.square.slice()
+        const squares = this.state.squares.slice()
         squares[i] = 'X'
         this.setState({squares: squares})
     }
 
     renderSquare(i) {
-        return <Square value={this.state.square[i]} />
+        return (
+            <Square 
+            value={ this.state.squares[i] } 
+            onClick={ () => this.handleClick(i) }
+            />
+        )
     }
 
     render() {
@@ -27,7 +32,6 @@ class Board extends Component {
         return(
             <div>
                 <div className="status">{status}</div>
-
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
