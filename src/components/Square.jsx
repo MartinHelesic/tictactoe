@@ -4,7 +4,10 @@ import '../assets/styles/Square.css'
 class Square extends Component {
     render() {
         return (
-            <button className="square">
+            <button 
+            className="square" 
+            onClick={() => { this.props.onClick()}}
+            >
                 {this.props.value}
             </button>
         )
