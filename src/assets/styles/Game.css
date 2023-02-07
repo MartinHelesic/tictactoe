@@ -3,7 +3,16 @@
     flex-direction: row;
   }
   
+  .game-play {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .game-info {
     margin-left: 20px;
+    height: 130px;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   
